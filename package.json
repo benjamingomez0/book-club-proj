@@ -1,0 +1,30 @@
+{
+  "name": "book-club-proj",
+  "version": "1.0.0",
+  "description": "# About: Read Meet is a web based book club app that seeks to more easily facilitate creating and joining book clubs around the country. Create a club, or join one and make sone new friends.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjamingomez0/book-club-proj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benjamingomez0/book-club-proj/issues"
+  },
+  "homepage": "https://github.com/benjamingomez0/book-club-proj#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.7.7",
+    "nodemon": "^1.19.4"
+  }
+}
