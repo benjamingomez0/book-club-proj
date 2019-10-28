@@ -20,6 +20,7 @@ app.use(session({
 //middleware
 app.use(methodOverride('_method'));//must come before our routes
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static('public'))
 
 
 
@@ -36,7 +37,9 @@ app.get('/',function(req,res){
 
 });
 
-
+//mounting routers
+const usersController = require('./controllers/users.js');
+app.use('/auth', usersController);
 
 
 

@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/style.css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+<div class="nav">
+
+    <div class="nav-header">
+        <div class="nav-left">
+            <a href="#" class="navlink">#</a>
+        </div>
+        <div class="nav-center"><a href="#"></a></div>
+        <div class="nav-right">
+            <a href="/users" class="navlink">Login</a>
+            <a href="/photos" class="navlink">Register</a>
+          
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="overlay">
+        <div class="overlay-content">
+            <a href="#" class="overlay-link">Login</a>
+            <a href="#" class="overlay-link">Register</a>
+        </div>
+    </div>
+
+</div>
+<script>
+const hamburgerMenu = document.querySelector('.hamburger-menu')
+const overlay = document.querySelector('.overlay')
+hamburgerMenu.addEventListener('click',function(){
+this.classList.toggle('open');
+overlay.classList.toggle('show');
+})
+
+</script>

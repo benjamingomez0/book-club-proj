@@ -1,0 +1,155 @@
+body{
+   
+    margin:10rem 0 0 0;
+   
+   /* background-color: black */
+   
+}
+a{
+    text-decoration: none;
+    color:inherit;
+}
+.nav{
+    position: fixed;
+    background-color: white;
+    border-bottom: 1px solid rgb(159, 158, 158);
+    width: 100%;
+    top: 0;
+    
+}
+
+.nav-header{
+    max-width: 80%;
+    margin: 0 auto;
+    display:flex;
+    padding: 15px;
+    align-items:center;
+}
+
+.nav-left{
+    width: 33.333%;
+    text-align: left;
+    padding:15px;
+}
+
+.nav-center{
+    width: 33.333%;
+    text-align: left;
+}
+.nav-right{
+    width: 60%;
+    text-align: right;
+}
+.navlink{
+    text-decoration: none;
+    margin-left: 3%;
+    text-transform: uppercase;
+    color:black;
+ 
+}
+.navlink:hover{
+    color:rgb(58,69,95);
+    cursor:pointer;
+}
+
+.hamburger-menu{
+    width:40px;
+    height:25px;
+    position: relative;
+    display:none;
+    margin:14px 15% 0 auto;
+    z-index: 2;
+}
+
+.bar{
+    display:block;
+    position: absolute;
+    width:25px;
+    height:3px;
+    left:0;
+    border-radius:6px;
+    background-color:rgb(58,69,95);
+    transition: all .50s ease-in-out;
+    
+}
+.open > .bar{
+    transition: all .50s ease-in-out;
+    background-color:white;
+}
+.bar:nth-child(1){
+    top:0px;
+}
+.bar:nth-child(2){
+    top:22.5%;
+}
+.bar:nth-child(3){
+    top:45%;
+}
+/* > child of any class that has .open class */
+.open > .bar:nth-child(1){
+    top:45%;
+    transform:rotate(135deg);
+    
+}
+.open > .bar:nth-child(2){
+    left:-60px;
+    opacity:0;
+    
+}
+.open > .bar:nth-child(3){
+    transform:rotate(-135deg);
+}
+.overlay{
+    height:100%;
+    width:100%;
+    display:flex;
+    position:fixed;
+    background-color: rgba(58,69,95,.95);
+    top:0;
+    left: -123rem; 
+    z-index: 1;
+    transition: all .60s ease-in-out;
+    
+}
+
+.overlay.show{
+    left:0;
+}
+
+.overlay-content{
+    position:relative;
+    top:15%;
+    width: 100%;
+    text-align: center;
+    margin-top:30px;
+}
+
+.overlay-link{
+    color:white;
+    text-decoration: none;
+    font-size: 36px;
+    display:block;
+    text-transform: uppercase;
+}
+
+@media (max-width:800px) {
+.hamburger-menu{display:block;}
+.nav-right > a{display:none;}
+
+}
+
+.home-splash{
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    /* background-image: url(images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg); */
+    background-size: contain;
+   height: 100vh;
+   width: 85vh;
+}
+.form-container{
+    margin:0 auto;
+    
+}
+.genre-list li{
+    list-style-type: none; 
+}
