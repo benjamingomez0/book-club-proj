@@ -1,6 +1,6 @@
 body{
    
-    margin:10rem 0 0 0;
+    margin:15rem 0 0 0;
    
    /* background-color: black */
    
@@ -8,6 +8,10 @@ body{
 a{
     text-decoration: none;
     color:inherit;
+}
+a:hover{
+    text-decoration: underline;
+    color:#C63C33;
 }
 .nav{
     position: fixed;
@@ -145,6 +149,7 @@ a{
     background-size: contain;
    height: 100vh;
    width: 85vh;
+   margin:0 auto;
 }
 .form-container{
     margin:0 auto;
@@ -152,4 +157,75 @@ a{
 }
 .genre-list li{
     list-style-type: none; 
+}
+/* User Show page Styling */
+.container{
+    display:flex;
+    max-width: 85%;
+    margin:0 auto;
+    border: 1px solid black;
+}
+.content-main{
+    padding-top:10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.username-display{
+    display:inline-block;
+}
+.user-container{
+display:inline-block;
+}
+.content{
+    height:15rem;
+    width:20rem;
+    border: 1px solid black;
+    margin:5px;
+    text-align: center;
+}
+.user-img-contain{
+    height:35rem;
+    width:25rem;
+   border: 1px solid black;
+   /* margin-left: 3rem; */
+   text-align: center;
+   display:inline-block;
+}
+.user-img{
+    height: 50%;
+    width: 50%;
+    border-radius: 5%;
+}
+/*Login page Styling*/
+.login-container{
+    height:17rem;
+    width:25rem; 
+    text-align: center;
+    margin:0 auto;
+    border: 1px solid black;
+    padding:15px;
+}
+
+/* Button Styling */
+input[type=submit]{
+    color:#C63C33;
+    font-family: 'Playfair Display', serif;
+    margin-top:10px;
+    padding: 5px;
+    border: 1px solid black;
+}
+input[type=submit]:hover{
+    background-color:#C63C33;
+    color:white;
+    border: 1px solid rgb(58,69,95);
+}
+/*form styling*/
+
+input[type=text] {
+    font-family: 'Playfair Display', serif;
+    color:#C63C33;
+    padding:3px; 
+    border:1px solid black; 
+    
 }

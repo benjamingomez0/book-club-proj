@@ -28,10 +28,13 @@ app.use(express.static('public'))
 
 app.get('/',function(req,res){
     try{
-        res.render('index.ejs');
+
+        res.render('index.ejs',
+        {message:req.session.message});
     }
     catch(err)
     {
+        
         res.send(err)
     }
 

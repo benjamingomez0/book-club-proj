@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include ../../partials/navbar.ejs %>
+    <title>Register</title>
+</head>
+<body>
+     <div class="home-splash">
+            <h1>Create new User</h1>
+    
+            <div class="form-container">
+                <form action="/auth/registration" method = "POST">
+                    First Name
+                    <input type="text" name = "fname"><br/>
+                    Last Name
+                    <input type="text"  name = "lname"><br/>
+                    Username
+                    <input type="text" name ="username"><br/>
+                    Password
+                    <input type="text" name ="password"><br/>
+                    Email Address<input type="text" name ="email"><br/>
+                    <details class = "genre-list">
+                        <summary>
+                        Genres you're interested in:
+                        </summary>
+                        <ul>
+                                <li>Non-fiction<input type="checkbox" name = "genres" value="Non-fiction"></li>
+                                <li>Fiction<input type="checkbox" name = "genres" value = "Fiction"></li>
+                                <li>Adventure<input type="checkbox" name = "genres" value ="Adventure"></li>
+                                <li>Crime<input type="checkbox" name = "genres" value = "Crime"></li>
+                                <li>Drama<input type="checkbox" name = "genres" value = "Drama"></li>
+                                <li>Children's<input type="checkbox" name = "genres" value = "Children's"></li>
+                                <li>Young Adult<input type="checkbox" name = "genres" value= "Young Adult"></li>
+                                <li>Horror<input type="checkbox" name = "genres" value = "Horror"></li>
+                                <li>Mystery<input type="checkbox" name = "genres" value = "Mystery"></li>
+                                <li>Romance<input type="checkbox" name = "genres" value = "Romance"></li>
+                                <li>Thriller<input type="checkbox" name = "genres" value = 'Thriller'></li>
+                                <li>Science Fiction<input type="checkbox" name = "genres" value = "Science Fiction"></li>
+                                <li>Classics<input type="checkbox" name = "genres" value = "Classics"></li>
+                                <li>Satire<input type="checkbox" name = "genres" value = "Satire"></li>
+                                <li>Self-Help<input type="checkbox" name = "genres" value = "Self-Help"></li>
+                        </ul>
+                    </details><br/>
+                    Upload a photo of yourself
+                    <input type="text" name ="photo"><br/>
+                    <input type="submit" value = "Create Account">
+
+                </form>
+            </div>
+                
+        </div>
+        
+</body>
+</html>
