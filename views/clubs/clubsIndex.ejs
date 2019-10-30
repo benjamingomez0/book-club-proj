@@ -8,16 +8,17 @@
 
 </head>
 <body>
-        <div class="container">
-                <div class="clubs-container">
-                    <div class="club-bump-contain">
-                    </div>
-                </div>
-                
                 <div class="content-main">
                     <% for(let i = 0; i < clubs.length; i++){ %>
                         <div class="content">
-                            <a href="/clubs/<%=clubs[i]._id%>"><%=clubs[i].book%></a>
+                                <p class = "club-card">
+                                        <a  href="/clubs/clubsshow/<%=clubs[i]._id%>"> <%=clubs[i].book%> </a>
+                                    </p>
+                                    <p class = "card-content">
+                                        <strong> Read By: </strong><%=clubs[i].readBy%><br/>
+                                        <strong> Reading With: </strong><%=clubs[i].members.length%> other members<br/>
+                                        <strong> Meeting At : </strong><%=clubs[i].location%><br/>
+                                    </p>
                         </div>
                      <% } %>               
                 </div> 
