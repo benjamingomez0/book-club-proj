@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <%- include ../../partials/navbar.ejs %>
+    <%-include('../../partials/navbar.ejs', {loggedIn: loggedIn})%>
     <title><%=user.username%></title>
 </head>
 <body>
@@ -14,7 +14,7 @@
                 <h1 class = "username-display"> <%=user.username%> </h1><br/>
                 <img class = "user-img" src="https://i.redd.it/7bat5p9r52b11.jpg" >
                 <p>Find Clubs</p>
-                <p>Create Club</p>
+                <p> <a href="/clubs/new">Create Club</a> </p>
             </div>
         </div>
 

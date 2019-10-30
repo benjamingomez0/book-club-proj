@@ -1,9 +1,6 @@
 body{
-   
-    margin:15rem 0 0 0;
-   
-   /* background-color: black */
-   
+    margin:6rem 0 0 0;
+
 }
 a{
     text-decoration: none;
@@ -52,7 +49,7 @@ a:hover{
  
 }
 .navlink:hover{
-    color:rgb(58,69,95);
+    color:#C63C33;
     cursor:pointer;
 }
 
@@ -144,16 +141,18 @@ a:hover{
 
 .home-splash{
     font-family: 'Playfair Display', serif;
-    text-align: center;
+    text-align: left;
     /* background-image: url(images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg); */
     background-size: contain;
    height: 100vh;
    width: 85vh;
-   margin:0 auto;
+   margin-left:3rem;
+   padding: 3px;
+   /* margin:0 auto; */
 }
-.form-container{
+.form-container input{
     margin:0 auto;
-    
+    padding: 9px;
 }
 .genre-list li{
     list-style-type: none; 
@@ -177,20 +176,40 @@ a:hover{
 .user-container{
 display:inline-block;
 }
+/*Clubs Index Styling */
+.clubs-container{
+display:inline-block;
+
+    width:100%;
+   /* border: 1px solid black; */
+   /* margin-left: 3rem; */
+   text-align: center;
+   display:inline-block;
+   box-shadow: 0 0 5px rgb(162, 166, 175);
+   margin:10px;
+}
+
+
 .content{
     height:15rem;
     width:20rem;
-    border: 1px solid black;
     margin:5px;
     text-align: center;
+    box-shadow: 0 0 5px rgb(162, 166, 175);
+}
+.content:hover{
+    transform: scale(1.02);
+    background-color:white;
+    
 }
 .user-img-contain{
     height:35rem;
     width:25rem;
-   border: 1px solid black;
+   /* border: 1px solid black; */
    /* margin-left: 3rem; */
    text-align: center;
    display:inline-block;
+   box-shadow: 0 0 5px rgb(162, 166, 175);
 }
 .user-img{
     height: 50%;
@@ -219,6 +238,7 @@ input[type=submit]:hover{
     background-color:#C63C33;
     color:white;
     border: 1px solid rgb(58,69,95);
+    
 }
 /*form styling*/
 
@@ -228,4 +248,41 @@ input[type=text] {
     padding:3px; 
     border:1px solid black; 
     
+}
+input[type=text]:focus {
+    outline: none !important;
+    border:1px solid #C63C33;
+    box-shadow: 0 0 3px rgb(58,69,95);
+}
+input[type=date]:focus {
+    outline: none !important;
+    border:1px solid #C63C33;
+    box-shadow: 0 0 3px rgb(58,69,95);
+}
+
+/* New Clubs Styling*/
+
+.club-create-contain{
+    margin: 0 auto;
+    height: 47rem;
+    width: 47rem;
+    border:1px solid black; 
+
+    padding: 10px;
+    text-align: center;
+    padding:5px
+}
+.red{
+    border:1px solid #C63C33; 
+    height: 100%
+}
+.blue{
+    border:1px solid rgb(58,69,95); 
+    height: 98%;
+    margin: 6px;
+}
+.orange{
+    border:1px solid #E7843C; 
+    height: 98%;
+    margin: 6px;
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%-include('../../partials/navbar.ejs', {loggedIn: loggedIn})%>
+
+</head>
+<body>
+        <div class="container">
+                <div class="clubs-container">
+                    <div class="club-bump-contain">
+                    </div>
+                </div>
+                
+                <div class="content-main">
+                    <% for(let i = 0; i < clubs.length; i++){ %>
+                        <div class="content">
+                            <a href="/clubs/<%=clubs[i]._id%>"><%=clubs[i].book%></a>
+                        </div>
+                     <% } %>               
+                </div> 
+        </div>
+</body>
+</html>

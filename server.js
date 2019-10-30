@@ -27,10 +27,25 @@ app.use(express.static('public'))
 //homepage
 
 app.get('/',function(req,res){
+    
+    
     try{
-
-        res.render('index.ejs',
-        {message:req.session.message});
+        if(req.session.loggedIn)
+            {
+                res.render('index.ejs',
+                    {
+                        message:req.session.message,
+                        loggedIn: req.session.loggedIn
+                    });
+                
+            }
+        else
+            {
+                res.render('index.ejs',
+                {message:req.session.message,
+                loggedIn: false});
+            }
+        
     }
     catch(err)
     {
@@ -44,7 +59,8 @@ app.get('/',function(req,res){
 const usersController = require('./controllers/users.js');
 app.use('/auth', usersController);
 
-
+const clubsController = require('./controllers/clubs.js')
+app.use('/clubs', clubsController);
 
 
 app.listen(PORT, ()=>{

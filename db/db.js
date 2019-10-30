@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const connectionString = 'mongodb://localhost/proj2'
+const connectionString = 'mongodb://localhost/project2'
 
 //connecting to db
 

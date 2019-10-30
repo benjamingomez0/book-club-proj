@@ -9,9 +9,14 @@
         </div>
         <div class="nav-center"><a href="#"></a></div>
         <div class="nav-right">
-            <a href="/auth/login" class="navlink">Login</a>
-            <a href="/auth/new" class="navlink">Register</a>
-          
+            <% if(loggedIn) { %>
+                <a href="/auth/user" class="navlink">Profile</a>
+                <a href="/clubs/" class="navlink">Join Clubs</a>
+            <%}else{%>
+                <a href="/auth/login" class="navlink">Login</a>
+                <a href="/auth/new" class="navlink">Register</a>
+            <%}%>
+
             <div class="hamburger-menu">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -21,10 +26,13 @@
         
     </div>
     <div class="overlay">
-        <div class="overlay-content">
-            <a href="#" class="overlay-link">Login</a>
-            <a href="#" class="overlay-link">Register</a>
-        </div>
+            <% if(loggedIn) { %>
+                <a href="/auth/user" class="navlink">Profile</a>
+                <a href="/clubs/" class="navlink">Join Clubs</a>
+            <%}else{%>
+                <a href="/auth/login" class="navlink">Login</a>
+                <a href="/auth/new" class="navlink">Register</a>
+            <%}%>
     </div>
 
 </div>

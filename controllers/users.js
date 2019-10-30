@@ -36,16 +36,20 @@ router.post('/registration', async (req, res) => {
 //    console.log(createdUser, "<*=*=*=*=*= created user");
     req.session.username = createdUser.username;
     req.session.loggedIn = true;
-  
+    req.session.userId = createdUser._id
     res.render('../views/users/usersShow.ejs',{
-        user: createdUser
+        user: createdUser,
+        loggedIn:req.session.loggedIn 
     })
   });
 
   //new user page display
 
   router.get('/new', (req,res)=>{
-    res.render('../views/users/usersNew.ejs')
+    res.render('../views/users/usersNew.ejs',
+    {
+        loggedIn:req.session.loggedIn 
+    });
   });
 
   // auth login 
@@ -67,12 +71,16 @@ router.post('/registration', async (req, res) => {
             // if there failed attempts get rid of the message
             // from the session
             req.session.username = foundUser.username;
-            req.session.logged   = true;
-  
+            req.session.loggedIn   = true;
+            req.session.userId = foundUser._id
+            
+
             res.render('../views/users/usersShow.ejs',
             {
                 user:foundUser,
-                message: req.session.message
+                message: req.session.message,
+                loggedIn:req.session.loggedIn
+            
             })
   
   
@@ -104,8 +112,27 @@ router.post('/registration', async (req, res) => {
 
   router.get('/login',(req,res)=>{
         res.render('../views/users/login.ejs',
-        {message:req.session.message});
+        {message:req.session.message,loggedIn:req.session.loggedIn});
   });
+
+
+  router.get('/user', async (req,res)=>{
+    try{
+        const foundUser = await User.findOne({username: req.session.username});
+        console.log(foundUser,'<=== found User')
+        res.render('../views/users/usersShow.ejs',
+        {
+            user:foundUser,
+            message: req.session.message,
+            loggedIn:req.session.loggedIn
+        
+        });
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+  })
   
 
   module.exports = router;
