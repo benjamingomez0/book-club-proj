@@ -194,14 +194,16 @@ padding:10px;
     margin:0 auto;
     text-align: left;
     padding: 2px;
-    font-size: .5rem;
+    font-size: 1rem;
+    overflow: scroll;
 }
 .content{
-    height:15rem;
-    width:20rem;
+    height:20rem;
+    width:25rem;
     margin:5px;
-    text-align: center;
+    text-align: justify;
     box-shadow: 0 0 5px rgb(162, 166, 175);
+    padding:15px;
 }
 .content:hover{
     transform: scale(1.02);
@@ -316,4 +318,14 @@ input[type=date]:focus {
     .user-form-container{
 
         padding-top:3rem;
+    }
+
+
+
+    .club-card{
+
+        font-size: 2rem;
+    }
+    .content > .leader-edit{
+        font-size: .75rem;
     }

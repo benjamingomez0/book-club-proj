@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%-include('../../partials/navbar.ejs', {loggedIn: loggedIn})%>
+    <title><%=club.book%></title>
+</head>
+<body>
+        <div class="club-create-contain">
+                <div class="red">
+                        <div class="blue">
+                                <div class = "orange">
+                
+                                        <h1><%=club.book%></h1>
+                
+                                        <h3>Members in group Currently:</h3>
+                                        <%=club.members.length%>/<%=club.numMembers%> <br/><br/>
+                                        
+                                        <h3>This club is meeting at: </h3>
+                                        <%=club.location%><br/><br/>
+                
+                                        <h3>Read by:</h3>
+                                        <%=club.readBy%> <br/><br/>
+                            
+                                    
+                                        <h4>Genres</h4>
+                                        <%for(let i=0;i<club.genres.length;i++){%> 
+                
+                                            <a href="/clubs/<%=club.genres[i]%>"><%=club.genres[i]%></a>,  <%}%>
+
+                                    <form action="/join/<%=club._id%>?_method=PUT" method="POST">
+                                        <input type="submit" value = "join Club">
+                                    </form>
+                
+                                </div>
+                                        
+                        </div>
+                </div>
+          </div>      
+    
+</body>
+</html>
+  

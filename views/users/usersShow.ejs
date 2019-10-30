@@ -30,17 +30,28 @@
 
         <div class="content-main">
                 <%for(let i=0;i<clubs.length;i++){%>
-                        <div class="content">
-                                <p><%=clubs[i].book%></p>
-                            </div>
-                    <%}%>
-            <!-- <div class="content">
-                A
-            </div> -->
+                    
 
+                        <div class="content">
+                            
+                            <p class = "club-card">
+                                <a  href="/clubs/clubsshow/<%=clubs[i]._id%>"> <%=clubs[i].book%> </a>
+                            </p>
+                            <p class = "card-content">
+                                <strong> Read By: </strong><%=clubs[i].readBy%><br/>
+                                <strong> Reading With: </strong><%=clubs[i].members.length%> other members<br/>
+                                <strong> Meeting At : </strong><%=clubs[i].location%><br/>
+                            </p>
+                            <%if(clubs[i].leader.toString()=== user._id.toString()){%>
+                                <span class="leader-edit"> <a href="/clubs/edit/<%=clubs[i]._id%>"> edit club </a> </span>
+                                <%}%>
+                        
+                        </div>         
+
+
+
+                    <%}%>
         </div>
-       
-       
     </div>
     
      

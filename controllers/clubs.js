@@ -72,16 +72,38 @@ router.get('/', async (req,res)=>{
 
 
 router.get('/:genre', async(req,res)=>{
-    console.log(req.params.genre,"<=======req.params")
+  
     await Club.find({"genres":req.params.genre}, (err,foundClubs)=>{
 
-        console.log(foundClubs, "<========clubs index found clubs") //// HOW DO I SEARCH IN THE CLUBS ARRAY?
-
+       
        res.render('../views/clubs/clubsIndex.ejs',{
                 clubs:foundClubs,
                 loggedIn: req.session.loggedIn})
             });
 });
+
+
+router.get('/clubsshow/:id/', async(req,res)=>
+{
+    try{
+        foundClub =  await Club.findById(req.params.id, (err, foundClub)=>{
+                res.render('../views/clubs/clubsShow.ejs',{
+                loggedIn: req.session.loggedIn,
+                club:foundClub,
+            });
+        });
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+
+});
+
+
+
+
+
 
 
 

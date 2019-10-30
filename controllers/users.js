@@ -39,7 +39,7 @@ router.post('/registration', async (req, res) => {
     req.session.loggedIn = true;
     req.session.userId = createdUser._id
 
-    const allClubs = await Club.find({});
+    const allClubs = await Club.find({"members":createdUser._id});
 
     res.render('../views/users/usersShow.ejs',{
         user: createdUser,
@@ -79,7 +79,7 @@ router.post('/registration', async (req, res) => {
             req.session.username = foundUser.username;
             req.session.loggedIn   = true;
             req.session.userId = foundUser._id
-            allClubs = await Club.find({});
+            allClubs = await Club.find({"members":foundUser._id});
             res.render('../views/users/usersShow.ejs',
             {
                 user:foundUser,
@@ -125,13 +125,15 @@ router.post('/registration', async (req, res) => {
   router.get('/user', async (req,res)=>{
     try{
         const foundUser = await User.findOne({username: req.session.username});
-        const allClubs = await Club.find({});
+       
+        const userClubs = await Club.find({"members":foundUser._id});
+        
         res.render('../views/users/usersShow.ejs',
         {
             user:foundUser,
             message: req.session.message,
             loggedIn:req.session.loggedIn,
-            clubs:allClubs 
+            clubs:userClubs 
         
         });
     }
@@ -158,5 +160,33 @@ router.post('/registration', async (req, res) => {
     }
 });
   
+router.put('/:id', async (req,res)=>{
+    await User.findByIdAndUpdate(req.params.id, req.body, {new:true}, async (err,updatedUser)=>{
+      if(err)
+      {
+        console.log(err)
+      }
+      else
+      {
+        req.session.username = updatedUser.username;
+        const allClubs = await Club.find({"members":foundUser._id});
+
+        res.render('../views/users/usersShow.ejs',
+        {
+            user:updatedUser,
+            message: req.session.message,
+            loggedIn:req.session.loggedIn,
+            clubs:allClubs 
+        
+        });
+        
+      }
+    })
+
+})
+
+
+
+
 
   module.exports = router;
