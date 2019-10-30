@@ -70,10 +70,10 @@ router.get('/', async (req,res)=>{
 });
 
 
-/************************************************************************************/
+
 router.get('/:genre', async(req,res)=>{
-    console.log(req.params,"<=======req.params")
-    await Club.find({genre:req.params}, (err,foundClubs)=>{
+    console.log(req.params.genre,"<=======req.params")
+    await Club.find({"genres":req.params.genre}, (err,foundClubs)=>{
 
         console.log(foundClubs, "<========clubs index found clubs") //// HOW DO I SEARCH IN THE CLUBS ARRAY?
 
@@ -82,6 +82,7 @@ router.get('/:genre', async(req,res)=>{
                 loggedIn: req.session.loggedIn})
             });
 });
-/************************************************************************************/
+
+
 
  module.exports = router;

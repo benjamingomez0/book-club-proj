@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/users.js')
+const Club = require('../models/clubs.js') 
 const bcrypt = require('bcryptjs');
 
 
@@ -37,9 +38,13 @@ router.post('/registration', async (req, res) => {
     req.session.username = createdUser.username;
     req.session.loggedIn = true;
     req.session.userId = createdUser._id
+
+    const allClubs = await Club.find({});
+
     res.render('../views/users/usersShow.ejs',{
         user: createdUser,
-        loggedIn:req.session.loggedIn 
+        loggedIn:req.session.loggedIn,
+        clubs:allClubs 
     })
   });
 
@@ -74,13 +79,13 @@ router.post('/registration', async (req, res) => {
             req.session.username = foundUser.username;
             req.session.loggedIn   = true;
             req.session.userId = foundUser._id
-            
-
+            allClubs = await Club.find({});
             res.render('../views/users/usersShow.ejs',
             {
                 user:foundUser,
                 message: req.session.message,
-                loggedIn:req.session.loggedIn
+                loggedIn:req.session.loggedIn,
+                clubs:allClubs
             
             })
   
@@ -120,12 +125,13 @@ router.post('/registration', async (req, res) => {
   router.get('/user', async (req,res)=>{
     try{
         const foundUser = await User.findOne({username: req.session.username});
-       
+        const allClubs = await Club.find({});
         res.render('../views/users/usersShow.ejs',
         {
             user:foundUser,
             message: req.session.message,
-            loggedIn:req.session.loggedIn
+            loggedIn:req.session.loggedIn,
+            clubs:allClubs 
         
         });
     }
@@ -134,6 +140,23 @@ router.post('/registration', async (req, res) => {
         console.log(err);
     }
   })
+
+
+  router.get('/edit/:id', async (req,res)=>{
+    try
+    {
+    foundUser = await User.findById(req.params.id, (err, foundUser) => {
+        res.render('../views/users/userEdit.ejs', {
+          user: foundUser,
+          loggedIn:req.session.loggedIn,
+        });
+      });
+    }
+    catch(err)
+    {
+      console.log(err);
+    }
+});
   
 
   module.exports = router;

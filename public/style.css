@@ -273,7 +273,6 @@ input[type=date]:focus {
     height: 47rem;
     width: 47rem;
     border:1px solid black; 
-
     padding: 10px;
     text-align: center;
     padding:5px
@@ -281,7 +280,8 @@ input[type=date]:focus {
 /* DIV color styling */
 .red{
     border:1px solid #C63C33; 
-    height: 100%
+    height: 100%;
+    
 }
 .blue{
     border:1px solid rgb(58,69,95); 
@@ -298,11 +298,22 @@ input[type=date]:focus {
     display:inline-block;
     
         width:100%;
-       /* border: 1px solid black; */
-       /* margin-left: 3rem; */
        text-align: center;
        display:inline-block;
        box-shadow: 0 0 5px rgb(162, 166, 175);
        margin:10px;
     }
     
+    /*User Edit Styling*/
+    .user-update-container{
+        margin: 0 auto;
+        height: 48rem;
+        width: 48rem;
+        border:1px solid black; 
+        padding: 10px;
+        text-align: center;
+    }
+    .user-form-container{
+
+        padding-top:3rem;
+    }

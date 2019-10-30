@@ -11,11 +11,13 @@
     <div class="container">
         <div class="user-container">
             <div class="user-img-contain">
-                <h1 class = "username-display"> <%=user.username%> </h1><br/>
+                 <a href="/auth/edit/<%=user._id%> " > <h1 class = "username-display"> <%= user.username %> </h1> </a> <br/>
                 <img class = "user-img" src="https://i.redd.it/7bat5p9r52b11.jpg" >
                <p>  
                     <span class ="user-link"><a href="/clubs/">Find Clubs</a></span> 
                     <span class ="user-link"><a href="/clubs/new">Create Club</a></span>
+                    
+                    
                </p>
 
               <div class="user-genres">
@@ -27,9 +29,15 @@
         </div>
 
         <div class="content-main">
-            <div class="content">
+                <%for(let i=0;i<clubs.length;i++){%>
+                        <div class="content">
+                                <p><%=clubs[i].book%></p>
+                            </div>
+                    <%}%>
+            <!-- <div class="content">
                 A
-            </div>
+            </div> -->
+
         </div>
        
        
