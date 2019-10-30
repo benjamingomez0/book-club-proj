@@ -13,37 +13,24 @@
             <div class="user-img-contain">
                 <h1 class = "username-display"> <%=user.username%> </h1><br/>
                 <img class = "user-img" src="https://i.redd.it/7bat5p9r52b11.jpg" >
-                <p>Find Clubs</p>
-                <p> <a href="/clubs/new">Create Club</a> </p>
+               <p>  
+                    <span class ="user-link"><a href="/clubs/">Find Clubs</a></span> 
+                    <span class ="user-link"><a href="/clubs/new">Create Club</a></span>
+               </p>
+
+              <div class="user-genres">
+               MY GENRES:
+               <%for(let i=0;i<user.genres.length;i++){%> <a href="/clubs/<%=user.genres[i]%>"><%=user.genres[i]%></a>,  <%}%>
+              </div>
+                 
             </div>
         </div>
 
         <div class="content-main">
-        <div class="content">
-            A
+            <div class="content">
+                A
+            </div>
         </div>
-        <div class="content">
-            b 
-        </div>
-        <div class="content">
-            c
-        </div>
-        <div class="content">
-            <p> </p>
-        </div>
-        <div class="content">
-            A
-        </div>
-        <div class="content">
-            b 
-        </div>
-        <div class="content">
-            c
-        </div>
-        <div class="content">
-            becka's
-        </div>
-    </div>
        
        
     </div>

@@ -48,7 +48,8 @@ router.post('/registration', async (req, res) => {
   router.get('/new', (req,res)=>{
     res.render('../views/users/usersNew.ejs',
     {
-        loggedIn:req.session.loggedIn 
+        loggedIn:req.session.loggedIn, 
+        message:req.session.message
     });
   });
 
@@ -119,7 +120,7 @@ router.post('/registration', async (req, res) => {
   router.get('/user', async (req,res)=>{
     try{
         const foundUser = await User.findOne({username: req.session.username});
-        console.log(foundUser,'<=== found User')
+       
         res.render('../views/users/usersShow.ejs',
         {
             user:foundUser,

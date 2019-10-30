@@ -157,10 +157,12 @@ a:hover{
 .genre-list li{
     list-style-type: none; 
 }
+
 /* User Show page Styling */
 .container{
     display:flex;
-    max-width: 85%;
+    max-width: 95%;
+    max-width: 95%;
     margin:0 auto;
     border: 1px solid black;
 }
@@ -175,21 +177,25 @@ a:hover{
 }
 .user-container{
 display:inline-block;
+padding:10px;
 }
-/*Clubs Index Styling */
-.clubs-container{
-display:inline-block;
-
-    width:100%;
-   /* border: 1px solid black; */
-   /* margin-left: 3rem; */
-   text-align: center;
-   display:inline-block;
-   box-shadow: 0 0 5px rgb(162, 166, 175);
-   margin:10px;
+.user-link{
+    padding: 2px;
+    background-color:rgb(58,69,95);
+    color: #E8E3BC;
+    border-radius: 5%;
+    margin: 0;
 }
 
-
+.user-genres{
+    height:24%;
+    width:85%;
+    border: 1px solid black;
+    margin:0 auto;
+    text-align: left;
+    padding: 2px;
+    font-size: .5rem;
+}
 .content{
     height:15rem;
     width:20rem;
@@ -272,6 +278,7 @@ input[type=date]:focus {
     text-align: center;
     padding:5px
 }
+/* DIV color styling */
 .red{
     border:1px solid #C63C33; 
     height: 100%
@@ -286,3 +293,16 @@ input[type=date]:focus {
     height: 98%;
     margin: 6px;
 }
+/*Clubs Index Styling */
+.clubs-container{
+    display:inline-block;
+    
+        width:100%;
+       /* border: 1px solid black; */
+       /* margin-left: 3rem; */
+       text-align: center;
+       display:inline-block;
+       box-shadow: 0 0 5px rgb(162, 166, 175);
+       margin:10px;
+    }
+    

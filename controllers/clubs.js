@@ -43,7 +43,7 @@ router.post('/create-club',  async (req,res)=>{
         
        await Club.create(createdClub);
        
-       Club.find({},(err, allClubs)=>{
+       await Club.find({},(err, allClubs)=>{
 
         res.render('../views/clubs/clubsIndex.ejs',{
             clubs: allClubs,
@@ -63,9 +63,25 @@ router.post('/create-club',  async (req,res)=>{
 });
 
 // show route
-// get('/',(req,res)=>{
+router.get('/', async (req,res)=>{
+    await Club.find({},(err, allClubs)=>{ 
+        res.render('../views/clubs/clubsIndex.ejs',{clubs: allClubs,loggedIn: req.session.loggedIn}) 
+    });
+});
 
-// })
 
+/************************************************************************************/
+router.get('/:genre', async(req,res)=>{
+    console.log(req.params,"<=======req.params")
+    await Club.find({genre:req.params}, (err,foundClubs)=>{
+
+        console.log(foundClubs, "<========clubs index found clubs") //// HOW DO I SEARCH IN THE CLUBS ARRAY?
+
+       res.render('../views/clubs/clubsIndex.ejs',{
+                clubs:foundClubs,
+                loggedIn: req.session.loggedIn})
+            });
+});
+/************************************************************************************/
 
  module.exports = router;
