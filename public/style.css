@@ -1,6 +1,6 @@
 body{
     margin:7rem 0 0 0;
-
+    font-family: 'Playfair Display', serif;
 }
 a{
     text-decoration: none;
@@ -13,7 +13,7 @@ a:hover{
 .nav{
     position: fixed;
     background-color: white;
-    border-bottom: 1px solid rgb(159, 158, 158);
+    border-bottom: 1px solid black;
     width: 100%;
     top: 0;
     
@@ -35,7 +35,10 @@ a:hover{
 
 .nav-center{
     width: 33.333%;
-    text-align: left;
+    text-align: center;
+    position: relative;
+    left: 305px;
+    font-family: 'Playfair Display', serif;
 }
 .nav-right{
     width: 60%;
@@ -226,12 +229,14 @@ padding:10px;
 }
 /*Login page Styling*/
 .login-container{
-    height:17rem;
-    width:25rem; 
+    height:20rem;
+    width:30rem; 
     text-align: center;
     margin:0 auto;
     border: 1px solid black;
     padding:15px;
+    position:relative;
+    top:5rem;
 }
 
 /* Button Styling */
@@ -328,4 +333,9 @@ input[type=date]:focus {
     }
     .content > .leader-edit{
         font-size: .75rem;
+    }
+
+    .logo{
+        width:45%;
+        margin-left:0;
     }

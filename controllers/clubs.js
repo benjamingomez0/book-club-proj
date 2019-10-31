@@ -169,8 +169,6 @@ router.get('/clubsshow/:id/', async(req,res)=>
             });
         
         
-        
-        
     router.delete('/:id', async (req,res)=>{
   
         const deletedClub = await Club.findByIdAndRemove(req.params.id)

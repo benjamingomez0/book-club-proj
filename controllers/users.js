@@ -185,7 +185,41 @@ router.put('/:id', async (req,res)=>{
 
 });
 
-router.delete('/:')
+router.get('/logout', (req, res) => {
+
+  req.session.destroy((err) => {
+    if(err){
+      res.send(err);
+    } else {
+      res.redirect('/');
+    }
+  })
+
+})
+
+router.delete('/:id', async(req,res)=>{
+  try
+  {
+    const deletedUser = await User.findByIdAndRemove(req.params.id)
+    await Club.remove({leader: deletedUser});
+   
+    req.session.destroy((err) => {
+    if(err)
+    {
+      res.send(err);
+    } 
+    else 
+    {
+      res.redirect('/');
+    }
+    });
+  }
+  catch(err)
+  {
+      console.log(err)
+  }
+
+});
 
 
 
