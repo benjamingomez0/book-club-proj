@@ -9,9 +9,32 @@ const bcrypt = require('bcryptjs');
 router.post('/registration', async (req, res) => {
   
     const password = req.body.password; 
-    //salting the string
     const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
-  
+    const foundUser = await User.findOne({username:req.body.username});
+    const foundEmail = await User.findOne({email:req.body.email });
+
+
+    if(!req.body.password)
+    { 
+      
+      req.session.message ="Please fill all forms to continue..."
+      return res.render('../views/index.ejs',{
+        message:req.session.message,loggedIn:req.session.loggedIn
+      
+        });
+    }
+    if(foundUser){
+      req.session.message = "The username has already been registered please try again..."
+      return res.render('../views/index.ejs',{
+        message:req.session.message,loggedIn:req.session.loggedIn
+      });
+    } else if(foundEmail){
+      req.session.message = "The email has already been registered please try again..."
+      return res.render('../views/index.ejs',{
+        message:req.session.message,loggedIn:req.session.loggedIn});
+    }
+
+
     const userDbEntry = {};
     userDbEntry.username = req.body.username;
     userDbEntry.password = passwordHash;

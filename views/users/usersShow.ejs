@@ -11,8 +11,14 @@
     <div class="container">
         <div class="user-container">
             <div class="user-img-contain">
-                 <a href="/auth/edit/<%=user._id%> " > <h1 class = "username-display"> <%= user.username %> </h1> </a> <br/>
-                <img class = "user-img" src="https://i.redd.it/7bat5p9r52b11.jpg" >
+                 <a href="/auth/edit/<%=user._id%> " > <h1 class = "username-display"> <%=user.username%> </h1> </a> <br/>
+
+                 <%if(user.photo) {%>
+                    <img class = "user-img" src="<%=user.photo%>" >
+                <% } else { %>
+                <img class = "user-img" src="/images/Logo.svg" >
+                <% } %>
+
                <p>  
 
                     <span class ="user-link"><a href="/clubs/">Find Clubs</a></span> 
@@ -21,7 +27,9 @@
 
               <div class="user-genres">
                MY GENRES:
-               <%for(let i=0;i<user.genres.length;i++){%> <a href="/clubs/<%=user.genres[i]%>"><%=user.genres[i]%></a>,  <%}%>
+               <%for(let i=0;i<user.genres.length;i++){%> 
+                    <a href="/clubs/<%=user.genres[i]%>"><%=user.genres[i]%></a>  
+                <%}%>
               </div>
                  
             </div>

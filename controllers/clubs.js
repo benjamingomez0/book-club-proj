@@ -120,6 +120,7 @@ router.get('/clubsshow/:id/', async(req,res)=>
     
     router.put('/join/:id', async(req,res)=>{
         const  foundUser= await User.findOne({username: req.session.username});
+        console.log
         const foundClub= await Club.findById(req.params.id)
         foundClub.members.push(foundUser._id);
         foundClub.save();
@@ -128,7 +129,8 @@ router.get('/clubsshow/:id/', async(req,res)=>
                     club:foundClub,
                     loggedIn:req.session.loggedIn,
                     sessionUser:req.session.username,
-                    user:foundUser
+                    user:foundUser,
+                    userId:req.session.userId
 
                 });
             
