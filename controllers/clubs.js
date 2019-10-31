@@ -85,11 +85,14 @@ router.get('/:genre', async(req,res)=>{
 
 router.get('/clubsshow/:id/', async(req,res)=>
 {
+    
     try{
         foundClub =  await Club.findById(req.params.id, (err, foundClub)=>{
                 res.render('../views/clubs/clubsShow.ejs',{
-                loggedIn: req.session.loggedIn,
-                club:foundClub,
+                    loggedIn: req.session.loggedIn,
+                    club:foundClub,
+                    sessionUser:req.session.username,
+                    userId: req.session.userId
             });
         });
     }
@@ -114,43 +117,68 @@ router.get('/clubsshow/:id/', async(req,res)=>
         }
     });
 
-router.put('/:id', async(req,res)=>{
-        try
-        {
-            Club.findByIdAndUpdate(req.params.id, req.body, {new:true}, async (err,updatedClub)=>{
-                if(err)
-                {
-                console.log(err)
-                }
-                else
-                {
-                    res.render('../views/clubs/clubsShow.ejs',
-                    {
-                        club:updatedClub,
-                        loggedIn:req.session.loggedIn
-                    
-                    });
-                    
-                }
+    
+    router.put('/join/:id', async(req,res)=>{
+        const  foundUser= await User.findOne({username: req.session.username});
+        const foundClub= await Club.findById(req.params.id)
+        foundClub.members.push(foundUser._id);
+        foundClub.save();
+        res.render('../views/clubs/clubsShow.ejs',
+            {
+                    club:foundClub,
+                    loggedIn:req.session.loggedIn,
+                    sessionUser:req.session.username,
+                    user:foundUser
 
                 });
-        }
+            
+            
+        });
+        
 
-        catch(err)
-        {
-            console.log(err);
-        }
-
-    });
-
-router.put('/join/:id', async(req,res)=>{
-   const  foundUser= await User.findOne({username: req.session.username});
-
-
-})
-
-
-
-
-
+        router.put('/:id', async(req,res)=>{
+                try
+                {
+                    const  foundUser= await User.findOne({username: req.session.username});
+                    Club.findByIdAndUpdate(req.params.id, req.body, {new:true}, async (err,updatedClub)=>{
+                        if(err)
+                        {
+                        console.log(err)
+                        }
+                        else
+                        {
+                            res.render('../views/clubs/clubsShow.ejs',
+                            {
+                                club:updatedClub,
+                                loggedIn:req.session.loggedIn,
+                                sessionUser:req.session.username,
+                                user:foundUser
+                            
+                            });
+                            
+                        }
+        
+                        });
+                }
+        
+                catch(err)
+                {
+                    console.log(err);
+                }
+        
+            });
+        
+        
+        
+        
+    router.delete('/:id', async (req,res)=>{
+  
+        const deletedClub = await Club.findByIdAndRemove(req.params.id)
+        
+        await Club.find({},(err, allClubs)=>{ 
+            res.render('../views/clubs/clubsIndex.ejs',{clubs: allClubs,loggedIn: req.session.loggedIn}) 
+        });        
+    })
+        
+        
  module.exports = router;

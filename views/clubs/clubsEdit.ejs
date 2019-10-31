@@ -40,7 +40,7 @@
                                                 <li>Mystery<input type="checkbox" name = "genres" value = "Mystery"></li>
                                                 <li>Romance<input type="checkbox" name = "genres" value = "Romance"></li>
                                                 <li>Thriller<input type="checkbox" name = "genres" value = 'Thriller'></li>
-                                                <li>Science Fiction<input type="checkbox" name = "genres" value = "Science Fiction"></li>
+                                                <li>Science Fiction<input type="checkboxrs" name = "genres" value = "Science Fiction"></li>
                                                 <li>Classics<input type="checkbox" name = "genres" value = "Classics"></li>
                                                 <li>Satire<input type="checkbox" name = "genres" value = "Satire"></li>
                                                 <li>Self-Help<input type="checkbox" name = "genres" value = "Self-Help"></li>
@@ -48,7 +48,9 @@
                                     </details><br/>
                                     <input type="submit" value = "Update Club">
                                 </form>
-                            
+                                <form action="/clubs/<%=club._id%>?_method=DELETE" method = "POST">
+                                    <input type="submit" value = "Delete Club">
+                                </form>
                             </div>
                         </div>
                     </div>

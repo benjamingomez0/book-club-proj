@@ -29,10 +29,13 @@
                                         <%for(let i=0;i<club.genres.length;i++){%> 
                 
                                             <a href="/clubs/<%=club.genres[i]%>"><%=club.genres[i]%></a>,  <%}%>
+                                        <% if(!club.members.includes(userId.toString())) { %> 
+                                                <form action="/clubs/join/<%=club._id%>?_method=PUT" method="POST">
+                                                        <input type="submit" value = "join Club">
+                                                </form>  
+                                        <% } %> 
 
-                                    <form action="/join/<%=club._id%>?_method=PUT" method="POST">
-                                        <input type="submit" value = "join Club">
-                                    </form>
+
                 
                                 </div>
                                         

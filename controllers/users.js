@@ -181,10 +181,11 @@ router.put('/:id', async (req,res)=>{
         });
         
       }
-    })
+    });
 
-})
+});
 
+router.delete('/:')
 
 
 
