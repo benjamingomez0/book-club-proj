@@ -67,15 +67,10 @@ router.post('/registration', async (req, res) => {
       // if User.findOne returns null/ or undefined it won't throw an error
       if(foundUser)
       {
-  
-          // comparee thier passwords
           if(bcrypt.compareSync(req.body.password, foundUser.password))
           {
-            // if true lets log them in
-            // start our session
+           
             req.session.message = '';
-            // if there failed attempts get rid of the message
-            // from the session
             req.session.username = foundUser.username;
             req.session.loggedIn   = true;
             req.session.userId = foundUser._id
@@ -87,13 +82,13 @@ router.post('/registration', async (req, res) => {
                 loggedIn:req.session.loggedIn,
                 clubs:allClubs
             
-            })
+            });
   
   
           }
         else
         {
-              // if the passwords don't match
+             
              req.session.message = 'Username or password is incorrect';
              res.redirect('/auth/login');
         }
@@ -105,7 +100,7 @@ router.post('/registration', async (req, res) => {
   
         req.session.message = 'Username or password is incorrect';
         res.redirect('/auth/login');
-        //  is where the form is
+       
       }
   
     }

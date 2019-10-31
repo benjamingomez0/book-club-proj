@@ -144,10 +144,21 @@ a:hover{
 
 .home-splash{
     font-family: 'Playfair Display', serif;
-    text-align: left;
-    /* background-image: url(images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg); */
+    text-align: center;
     background-size: contain;
-   height: 100vh;
+   height: 120vh;
+   width: 85vh;
+   margin-left:3rem;
+   padding: 3px;
+   /* margin:0 auto; */
+}
+
+.registration-splash{
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    
+    background-size: contain;
+   height: 120vh;
    width: 85vh;
    margin-left:3rem;
    padding: 3px;
@@ -160,6 +171,8 @@ a:hover{
 .genre-list li{
     list-style-type: none; 
 }
+
+
 
 /* User Show page Styling */
 .container{
@@ -191,7 +204,7 @@ padding:10px;
 }
 
 .user-genres{
-    height:24%;
+    height: 21%;
     width:85%;
     border: 1px solid black;
     margin:0 auto;
@@ -216,8 +229,6 @@ padding:10px;
 .user-img-contain{
     height:35rem;
     width:25rem;
-   /* border: 1px solid black; */
-   /* margin-left: 3rem; */
    text-align: center;
    display:inline-block;
    box-shadow: 0 0 5px rgb(162, 166, 175);
@@ -229,14 +240,15 @@ padding:10px;
 }
 /*Login page Styling*/
 .login-container{
-    height:20rem;
-    width:30rem; 
+    height:25rem;
+    width:35rem; 
     text-align: center;
     margin:0 auto;
     border: 1px solid black;
-    padding:15px;
+    padding: 1px 1px 8px 1px;
     position:relative;
     top:5rem;
+    margin-bottom: 20px;
 }
 
 /* Button Styling */
@@ -277,7 +289,7 @@ input[type=date]:focus {
 
 .club-create-contain{
     margin: 0 auto;
-    height: 47rem;
+    height: 54rem;
     width: 47rem;
     border:1px solid black; 
     padding: 10px;
@@ -300,6 +312,19 @@ input[type=date]:focus {
     height: 98%;
     margin: 6px;
 }
+
+.login-container > .red{
+    margin:3px;
+}
+.login-container > .red >.blue{
+    margin:3px;
+}
+.login-container > .red >.blue>.orange{
+    margin:3px;
+}
+
+
+
 /*Clubs Index Styling */
 .clubs-container{
     display:inline-block;
@@ -326,7 +351,6 @@ input[type=date]:focus {
     }
 
 
-
     .club-card{
 
         font-size: 2rem;
@@ -338,4 +362,20 @@ input[type=date]:focus {
     .logo{
         width:45%;
         margin-left:0;
+    }
+
+    .about{
+        height:15rem;
+        width:100%;
+        
+        font-family: 'Playfair Display', serif;
+        font-size: 4rem;
+        margin: 2rem;
+    }
+    .about-link{
+        text-align:center;
+    }
+
+    .logo{
+        margin-right: 70px;
     }

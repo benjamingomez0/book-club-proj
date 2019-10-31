@@ -8,21 +8,29 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="login-container">
-        <span class ="log-message"> <%= message %> </span>
-        <h2>User Login</h2>
-        <form action="/auth/login" method="POST">
-          <input type="text" name="username" placeholder="username"><br>
-          <br>
-          <input type="text" name="email" placeholder="email"><br>
-          <br>
-          <input type="text" name="password" placeholder="password"><br>
-          <br>
-          <input type="submit" value="Login">
-        </form>
-        <form action="/auth/new/">
-            <input type="submit" value="register" />
-        </form>
+    <div class="login-container">  
+        <div class="red">
+                <div class="blue">
+                    <div class="orange">
+                        
+                            <span class ="log-message"> <%= message %> </span>
+                            <h2>User Login</h2>
+                            <form action="/auth/login" method="POST">
+                            <input type="text" name="username" placeholder="username"><br>
+                            <br>
+                            <input type="text" name="email" placeholder="email"><br>
+                            <br>
+                            <input type="text" name="password" placeholder="password"><br>
+                            <br>
+                            <input type="submit" value="Login">
+                            </form>
+                            <form action="/auth/new/">
+                                <input type="submit" value="register" />
+                            </form>
+                        
+                </div>         
+            </div>                
+        </div>    
     </div>
 </body>
 </html>
