@@ -1,4 +1,4 @@
-![Read Meet Logo](/images/Logo.svg)
+![Read Meet Logo](https://github.com/benjamingomez0/book-club-proj/blob/master/public/images/Logo.svg)
 
 # book-club-proj
 
