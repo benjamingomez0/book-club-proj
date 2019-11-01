@@ -154,7 +154,7 @@ router.get('/clubsshow/:id/', async(req,res)=>
                                 club:updatedClub,
                                 loggedIn:req.session.loggedIn,
                                 sessionUser:req.session.username,
-                                user:foundUser
+                                userId:foundUser
                             
                             });
                             

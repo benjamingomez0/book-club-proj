@@ -19,7 +19,7 @@ vii. Users should have ability to delete their accounts from their dashboard.<br
 viii. Users should be able to be presented with clubs that have the same genre as those they've expressed an interest in.<br/>
 
 # Known Issues
-Read Meet suffers from some responsiveness issues as some of the navigation bar does not resize responsively. Also upon moving to full screen the positioning suffers on the home page.  Read meet also lacks the ability to view the leader of the club or to search through the clubs in a meaningful way. There is also an issue where clicking on the about navigation link will not do anything on any page but the home page
+Read Meet suffers from some responsiveness issues as some of the navigation bar does not resize responsively. Also upon moving to full screen the positioning suffers on the home page.  Read meet also lacks the ability to view the leader of the club or to search through the clubs in a meaningful way. When choosing genres there is the issue where selecting only one genre will push in an array of characters with each getting an 'a' tag assigned to them. There is also an issue where clicking on the about navigation link will not do anything on any page but the home page. 
 
 # Coming Soon
 * Friend functionality: Establish connections with other users and create clubs that only friends can join!
