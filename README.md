@@ -1,3 +1,5 @@
+![Read Meet Logo](/images/Logo.svg)
+
 # book-club-proj
 
 # About:
