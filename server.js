@@ -1,6 +1,7 @@
 const express = require('express');
 const app     = express();
-const PORT    = 3030;
+require('dotenv').config()
+const PORT = process.env.PORT
 
 //middleware requires
 const bodyParser     = require('body-parser');
@@ -64,5 +65,5 @@ app.use('/clubs', clubsController);
 
 
 app.listen(PORT, ()=>{
-    console.log('listening...')
+    console.log(`listening on PORT ${PORT}...`)
 })

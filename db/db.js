@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const connectionString = 'mongodb://localhost/project2'
+const connectionString = process.env.MONGODB_URI
 
 //connecting to db
 
