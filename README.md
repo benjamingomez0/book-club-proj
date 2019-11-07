@@ -1,7 +1,7 @@
 ![Read Meet Logo](https://github.com/benjamingomez0/book-club-proj/blob/master/public/images/Logo.svg)
 
 # book-club-proj
-
+[Site](https://read-meet.herokuapp.com/)
 # About:
 Read Meet is a web based book club app that seeks to more easily facilitate creating and joining book clubs around the country. Create a club, or join one and make sone new friends. 
 
@@ -25,6 +25,5 @@ Read Meet suffers from some responsiveness issues as some of the navigation bar 
 * Friend functionality: Establish connections with other users and create clubs that only friends can join!
 * Request functionality: See who is the club leader and make requests to roll back the read by date or change the book!
 
-#SITE URL
-https://read-meet.herokuapp.com/
+
 
