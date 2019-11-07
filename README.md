@@ -25,5 +25,6 @@ Read Meet suffers from some responsiveness issues as some of the navigation bar 
 * Friend functionality: Establish connections with other users and create clubs that only friends can join!
 * Request functionality: See who is the club leader and make requests to roll back the read by date or change the book!
 
-
+#SITE URL
+https://read-meet.herokuapp.com/
 
